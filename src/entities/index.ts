@@ -133,7 +133,7 @@ export class Cluster {
     public queues: { [name: string]: Queue } = {};
     public exchanges: { [name: string]: Exchange } = {};
 
-    private bindings: Binding[] = [];
+    public bindings: Binding[] = [];
 
     public static loadClusterFromDefinitions(defn: {queues: QueueDefinition[]; exchanges: ExchangeDefinition[]; bindings: BindingDefinition[] }): Cluster {
         const c = new Cluster();
@@ -205,10 +205,12 @@ export class Cluster {
         if (typeof source === "string") {
             binding.source = source;
             binding.sourceObject = this.exchanges[binding.source];
-        } else if (source instanceof Queue) {
+        } else if (source instanceof Exchange) {
             binding.sourceObject = source;
             binding.source = source.name;
-        } else {
+        }
+
+        if (!binding.sourceObject) {
             throw new Error(`Unknown source for binding ${source}`);
         }
 
@@ -218,13 +220,22 @@ export class Cluster {
         } else if (destination instanceof Queue) {
             binding.destinationObject = destination;
             binding.destination = destination.name;
-        } else {
+        }
+
+        if (!binding.destinationObject) {
             throw new Error(`Unknown destination for binding ${destination}`);
         }
 
         binding.destination_type = destinationType as "queue";
 
         binding.setCluster(this);
+
+        for (const b of this.bindings) {
+            if (b.source === binding.source && b.destination === binding.destination && b.destination_type === binding.destination_type) {
+                throw new Error(`Binding from ${source} to ${destinationType} ${destination} already exists`);
+            }
+        }
+
         this.bindings.push(binding);
 
         return binding;
