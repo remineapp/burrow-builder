@@ -18,7 +18,10 @@
     "queue",
     "config"
   ],
-  "author": "Remine Devs",
+  "contributors": [
+    "Remine LLC <careers@remine.com> (remine.com)",
+    "Akshay Karthik <akshay.karthik@gmail.com> (http://akshaykarthik.com)"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/remineapp/burrow-builder/issues"
