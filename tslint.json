@@ -1,0 +1,41 @@
+{
+    "extends": [
+        "tslint:all"
+    ],
+    "rules": {
+        "variable-name": [ false ],
+        "max-line-length": [ false ],
+
+        "interface-name": [ false ],
+
+        "member-ordering": [ false ],
+        "object-literal-sort-keys": [ false ],
+
+        "max-classes-per-file": [ false ],
+
+        "comment-format": [ false ],
+
+        "no-inferrable-types": [ false ],
+
+        "completed-docs": [ false ] ,
+
+        "strict-boolean-expressions": false,
+
+        "no-unsafe-any": false,
+
+        "curly": [true, "ignore-same-line"],
+
+        "typedef": [
+            true,
+            "call-signature",
+            // "arrow-call-signature",
+            "parameter",
+            "arrow-parameter",
+            "property-declaration",
+            // "variable-declaration",
+            "member-variable-declaration"
+            // "object-destructuring",
+            // "array-destructuring" 
+        ]
+    }
+}

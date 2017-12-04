@@ -1,0 +1,10 @@
+node_modules
+
+.vscode
+.idea
+
+.npmrc
+
+.DS_Store
+
+lib
