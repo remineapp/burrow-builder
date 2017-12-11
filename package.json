@@ -1,0 +1,41 @@
+{
+  "name": "burrow-builder",
+  "version": "0.0.1",
+  "description": "A small DSL to generate rabbitmq configurations",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "lint": "tslint -p tsconfig.dev.json",
+    "test": "npm run unit-test",
+    "unit-test": "mocha --exit -r ts-node/register src/**/*.spec.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/remineapp/burrow-builder.git"
+  },
+  "keywords": [
+    "rabbitmq",
+    "dsl",
+    "burrow-builder",
+    "queue",
+    "config"
+  ],
+  "contributors": [
+    "Remine LLC <careers@remine.com> (remine.com)",
+    "Akshay Karthik <akshay.karthik@gmail.com> (http://akshaykarthik.com)"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/remineapp/burrow-builder/issues"
+  },
+  "homepage": "https://github.com/remineapp/burrow-builder#readme",
+  "devDependencies": {
+    "@types/chai": "^4.0.8",
+    "@types/mocha": "^2.2.44",
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1",
+    "ts-node": "^3.3.0",
+    "tslint": "^5.8.0",
+    "typescript": "^2.6.2"
+  }
+}
