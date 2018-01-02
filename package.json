@@ -1,8 +1,9 @@
 {
   "name": "burrow-builder",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A small DSL to generate rabbitmq configurations",
   "main": "lib/index.js",
+  "typings": "lib/index.js",
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "lint": "tslint -p tsconfig.dev.json",
