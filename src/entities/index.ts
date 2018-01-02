@@ -191,7 +191,7 @@ export class Cluster {
         return ex;
     }
 
-    public addBinding(source: string | Exchange, destination: string | Queue, opts?: BindingOptions | string): Binding {
+    public addBinding(source: string | Exchange, destination: string | Queue, opts?: BindingOptions): Binding {
         let destinationType: string;
         if (typeof opts === "string") {
             destinationType = opts;
@@ -227,6 +227,8 @@ export class Cluster {
         }
 
         binding.destination_type = destinationType as "queue";
+        if (opts && opts.routing_key) binding.routing_key = opts.routing_key;
+        if (opts && opts.arguments) binding.arguments = opts.arguments;
 
         binding.setCluster(this);
 
