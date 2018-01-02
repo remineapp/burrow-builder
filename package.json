@@ -1,6 +1,6 @@
 {
   "name": "burrow-builder",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A small DSL to generate rabbitmq configurations",
   "main": "lib/index.js",
   "typings": "lib/index.js",
@@ -31,11 +31,11 @@
   },
   "homepage": "https://github.com/remineapp/burrow-builder#readme",
   "devDependencies": {
-    "@types/chai": "^4.0.8",
-    "@types/mocha": "^2.2.44",
+    "@types/chai": "^4.0.10",
+    "@types/mocha": "^2.2.45",
     "chai": "^4.1.2",
-    "mocha": "^4.0.1",
-    "ts-node": "^3.3.0",
+    "mocha": "^4.1.0",
+    "ts-node": "^4.1.0",
     "tslint": "^5.8.0",
     "typescript": "^2.6.2"
   }
